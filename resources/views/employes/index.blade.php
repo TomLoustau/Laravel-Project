@@ -15,7 +15,7 @@
                 <td>{{ $employe->prenom }} | </td>
                 <td>{{ $employe->nom }} |</td>
                 <td>{{ $employe->email }} | </td>
-                <td><a href="{{ route('employes.show', [$employe->id]) }}">voir</a><br></td>
+                <td><a href="{{ route('employe.show', [$employe->id]) }}">voir</a><br></td>
             </tr>
         @endforeach
         </tbody>

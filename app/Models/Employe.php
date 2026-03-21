@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Employe extends Model
 {
     //
-    protected $filable = [
+    protected $fillable = [
         'nom',
         'prenom',
         'email',
@@ -21,11 +21,11 @@ class Employe extends Model
     }
 
     public function trajet(){
-        return $this->belongsToMany(Trajet::class, 'estPassager', 'id', 'id_trajet');
+        return $this->belongsToMany(Trajet::class, 'estPassager', 'idEmp', 'idTrajet');
     }
 
     public function campuses(){
-        return $this->belongsToMany(Campuse::class, 'frequente', 'id', 'id_camp');
+        return $this->belongsToMany(Campuse::class, 'frequentes', 'id_emp', 'id_camp');
     }
 
     public function voitureCount($id){

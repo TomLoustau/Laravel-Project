@@ -17,13 +17,12 @@ class EmployeController extends Controller
         $nbVoitures = $employe->voitureCount($id);
         $statut = $employe->statutEmp($id);
         $voitures = $employe->voitures()->get();
-        return view('employes.show', compact('employe', 'nbVoitures', 'statut', 'voitures'));
+            return view('employes.show', compact('employe', 'nbVoitures', 'statut', 'voitures'));
     }
 
     public function verifier($id){
         $employe = Employe::find($id);
         $modele = $employe->possedeModele($id, $_GET['modele']);
-        return redirect()->route('employes.show', $id)->with('resultat', $modele ? "Yes" : "No");
+        return redirect()->route('employe.show', $id)->with('resultat', $modele ? "Yes" : "No");
     }
-
 }

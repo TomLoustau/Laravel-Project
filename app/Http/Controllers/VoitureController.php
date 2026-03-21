@@ -11,6 +11,21 @@ class VoitureController extends Controller
         return view('/voitures/index');
     }
 
+    public function create($id)
+    {
+        return view('voitures.create', compact('id'));
+    }
+
+    public function store(Request $request, $id)
+    {
+        Voiture::create([
+            'modele' => $request->modele,
+            'nb_place' => $request->nb_place,
+            'id_proprio' => $id
+        ]);
+
+        return redirect()->route('employe.show', $id);
+    }
     public function show($id){
         $voiture = Voiture::find($id);
         $employe = $voiture->employe;

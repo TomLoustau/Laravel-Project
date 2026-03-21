@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Voiture extends Model
 {
     protected $table = 'voiture';
-    protected $filable = [
+    protected $fillable = [
         'modele',
-        'nb_places',
+        'nb_place',
         'id_proprio'
     ];
 
@@ -20,6 +20,4 @@ class Voiture extends Model
     public function trajets(){
         return $this->hasMany(Trajet::class, 'id_trajet');
     }
-
-
 }

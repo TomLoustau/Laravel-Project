@@ -18,6 +18,12 @@
     <div>{{ session('resultat') }}</div>
 @endif
 
+@if(session('error'))
+    <div class="alert alert-danger">
+        <h1 style="color : red">{{ session('error') }}</h1>
+    </div>
+@endif
+
 @include('partials.voitures')
 
 @include('partials.footerIndex')

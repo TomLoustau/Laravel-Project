@@ -26,6 +26,6 @@ class Campuse extends Model
 
     protected function Employes()
     {
-        return $this->belongsToMany(Employe::class, "frequente");
+        return $this->belongsToMany(Employe::class, "frequentes");
     }
 }
