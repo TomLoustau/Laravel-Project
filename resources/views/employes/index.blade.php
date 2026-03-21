@@ -1,0 +1,24 @@
+@extends('layouts.base')
+<div>
+@section('zone2')
+
+    @include('partials.headerIndex')
+    <table>
+        <thead>
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+        @foreach($employes as $employe)
+            <tr>
+                <td>{{ $employe->prenom }} | </td>
+                <td>{{ $employe->nom }} |</td>
+                <td>{{ $employe->email }} | </td>
+                <td><a href="{{ route('employes.show', [$employe->id]) }}">voir</a><br></td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    @endsection
+</div>
