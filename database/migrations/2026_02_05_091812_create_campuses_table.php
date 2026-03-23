@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('description');
             $table->string('adresse');
             $table->string('type');
-            $table->foreignId('id_employe')->constrained('employes');
             $table->timestamps();
         });
     }

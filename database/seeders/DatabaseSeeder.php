@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,6 +18,16 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $this->call([EmployeSeeder::class]);
+        $this->call([EmployeSeeder::class, CampusSeeder::class]);
+
+        DB::table('frequentes')->insert([
+           'id_emp' => 1,
+            'id_camp' => 2
+        ]);
+
+        DB::table('frequentes')->insert([
+            'id_emp' => 2,
+            'id_camp' => 1
+        ]);
     }
 }

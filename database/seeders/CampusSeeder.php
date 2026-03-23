@@ -16,15 +16,13 @@ class CampusSeeder extends Seeder
         Campuse::create([
             'description' => 'Campus de pau',
             'adresse' => 'Allée du park montory',
-            'Informatique',
-            1
+            'Type' => 'Informatique'
         ]);
 
         Campuse::create([
             'description' => 'Campus de Bordeauw',
             'adresse' => 'Allée des chartrons',
-            'GEA',
-            2
+            'Type' => 'GEA'
         ]);
     }
 }
