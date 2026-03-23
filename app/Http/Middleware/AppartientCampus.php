@@ -19,7 +19,7 @@ class AppartientCampus
         $employe = Employe::find($request->route('id'));
 
         if($employe != null && $employe->campuses->count() == 0){
-            return redirect()->route('employes.index');
+            return redirect()->route('employes.index')->with('error', 'L employe n appartient à aucun campus');
         }
         return $next($request);
     }

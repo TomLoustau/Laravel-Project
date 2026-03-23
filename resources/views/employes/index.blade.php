@@ -3,6 +3,9 @@
 @section('zone2')
 
     @include('partials.headerIndex')
+    @if(session('error'))
+        <p>Erreur : {{ session('error') }}</p>
+        @endif
     <table>
         <thead>
             <th>Prenom</th>
