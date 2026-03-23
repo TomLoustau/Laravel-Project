@@ -17,11 +17,11 @@ class Trajet extends Model
     ];
 
     function campuseDep(){
-        return $this->belongsTo(Campuses::class, 'id_camp_dep');
+        return $this->belongsTo(Campuse::class, 'id_camp_dep');
     }
 
     function campuseArr(){
-        return $this->belongsTo(Campuses::class, 'id_camp_arr');
+        return $this->belongsTo(Campuse::class, 'id_camp_arr');
     }
 
     function voiture(){

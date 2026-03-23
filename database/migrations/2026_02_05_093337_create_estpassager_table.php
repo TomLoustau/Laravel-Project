@@ -23,8 +23,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
-        Schema::dropIfExists('estpassager');
-    }
+//    public function down(): void
+//    {
+//        Schema::dropIfExists('estpassager');
+//    }
 };
